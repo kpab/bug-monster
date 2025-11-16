@@ -1,5 +1,7 @@
 # ⚔️ Bug Monsters
 
+English | [日本語](README.ja.md)
+
 > Transform your debugging experience! Watch as your bugs and errors manifest as animated monsters that you must defeat by fixing your code.
 
 Bug Monsters is a VS Code extension that gamifies the debugging process by visualizing diagnostics (errors, warnings, and hints) as animated monster creatures. Fix your bugs to defeat the monsters!
@@ -17,13 +19,37 @@ Bug Monsters is a VS Code extension that gamifies the debugging process by visua
 
 ## 👾 Monster Types
 
-| Monster | Trigger | Description |
-|---------|---------|-------------|
-| **Error Monster** | General errors | Aggressive red creature with fangs and claws |
-| **TypeError Beast** | Type errors | Large purple beast with horns |
-| **ReferenceError Wraith** | Reference errors | Ghostly blue semi-transparent wraith |
-| **Warning Bug** | Warnings | Small yellow buzzing bug |
-| **Hint Spirit** | Hints | Friendly green glowing spirit |
+Each error type spawns a unique monster with its own design and animations:
+
+### Error Monster 🔴
+**Triggers on:** General errors
+**Description:** Aggressive red creature with fangs and claws
+
+<img src="src/ui/webviewAssets/monsters/error.svg" width="150" alt="Error Monster"/>
+
+### TypeError Beast 💜
+**Triggers on:** Type errors
+**Description:** Large purple beast with horns
+
+<img src="src/ui/webviewAssets/monsters/typeerror.svg" width="150" alt="TypeError Beast"/>
+
+### ReferenceError Wraith 🔵
+**Triggers on:** Reference errors
+**Description:** Ghostly blue semi-transparent wraith
+
+<img src="src/ui/webviewAssets/monsters/referenceerror.svg" width="150" alt="ReferenceError Wraith"/>
+
+### Warning Bug 🟡
+**Triggers on:** Warnings
+**Description:** Small yellow buzzing bug
+
+<img src="src/ui/webviewAssets/monsters/warning.svg" width="150" alt="Warning Bug"/>
+
+### Hint Spirit 🟢
+**Triggers on:** Hints
+**Description:** Friendly green glowing spirit
+
+<img src="src/ui/webviewAssets/monsters/hint.svg" width="150" alt="Hint Spirit"/>
 
 ## 📐 Monster Sizes
 
@@ -34,21 +60,49 @@ Monsters grow based on the number of issues:
 - **L Size**: 6-9 issues (170px, standard design)
 - **XL Size**: 10+ issues (210px, **special scary variant** with more spikes, fangs, and effects!)
 
+### XL Variants - Extra Scary! 👹
+
+When you have 10 or more errors, monsters transform into their terrifying XL forms:
+
+<table>
+<tr>
+<td align="center">
+<img src="src/ui/webviewAssets/monsters/error-xl.svg" width="200" alt="XL Error Monster"/><br/>
+<b>XL Error Monster</b>
+</td>
+<td align="center">
+<img src="src/ui/webviewAssets/monsters/typeerror-xl.svg" width="200" alt="XL TypeError Beast"/><br/>
+<b>XL TypeError Beast</b>
+</td>
+</tr>
+<tr>
+<td align="center">
+<img src="src/ui/webviewAssets/monsters/referenceerror-xl.svg" width="200" alt="XL ReferenceError Wraith"/><br/>
+<b>XL ReferenceError Wraith</b>
+</td>
+<td align="center">
+<img src="src/ui/webviewAssets/monsters/warning-xl.svg" width="200" alt="XL Warning Bug"/><br/>
+<b>XL Warning Bug</b>
+</td>
+</tr>
+</table>
+
 ## 🚀 Getting Started
 
 ### Installation
 
-1. Clone this repository
-2. Run `npm install` to install dependencies
-3. Press `F5` in VS Code to launch the extension in debug mode
-4. A new VS Code window will open with the extension loaded
+1. Open VS Code
+2. Go to Extensions (Ctrl+Shift+X / Cmd+Shift+X)
+3. Search for "Bug Monsters"
+4. Click Install
 
-### Usage
+### How to Use
 
-1. **Monsters Spawn**: Errors and warnings automatically spawn monsters
-2. **View Battlefield**: Click the sword icon (⚔️) in the status bar to open the Monster Battlefield
-3. **Defeat Monsters**: Fix your bugs to see the defeat animation
-4. **Shared Space**: All monsters appear in a single battlefield where they can overlap
+1. **Monsters Spawn Automatically**: When you have errors or warnings in your code, monsters will appear in the status bar
+2. **Open the Battlefield**: Click the sword icon (⚔️) in the status bar to view all monsters
+3. **Navigate to Errors**: Click on any monster to jump to the error location in your code
+4. **Defeat Monsters**: Fix your bugs to see the satisfying defeat animation!
+5. **Watch Them Grow**: The more errors you have, the bigger and scarier the monsters become
 
 ## 🎮 Commands
 
@@ -80,43 +134,6 @@ Customize Bug Monsters in your VS Code settings:
 }
 ```
 
-## 🧪 Testing
-
-Want to see the extension in action?
-
-1. Open the included `example-test.ts` file
-2. You'll see type errors and reference errors
-3. Monsters will appear in the status bar
-4. Click the status bar to open the Monster Panel
-5. Fix errors to watch monsters get defeated!
-
-Example error code:
-```typescript
-const numberValue: number = "this is a string"; // Spawns TypeError Beast!
-console.log(undefinedVariable); // Spawns ReferenceError Wraith!
-```
-
-## 🏗️ Architecture
-
-```
-src/
-├── extension.ts              # Extension entry point
-├── types.ts                  # TypeScript type definitions
-├── monsterManager.ts         # Monster state management
-├── diagnosticsWatcher.ts     # VS Code diagnostics monitoring
-└── ui/
-    ├── panelView.ts          # Webview panel implementation
-    └── webviewAssets/
-        ├── effects/
-        │   └── styles.css    # Animation CSS
-        └── monsters/         # SVG monster designs
-            ├── error.svg
-            ├── typeerror.svg
-            ├── referenceerror.svg
-            ├── warning.svg
-            └── hint.svg
-```
-
 ## 🎨 Monster Animations & Battlefield
 
 ### Battlefield Layout
@@ -139,33 +156,6 @@ Each monster features sophisticated SVG animations:
 - **Defeat Fade**: Spectacular 720° rotation exit when bugs are fixed
 - **Growing Power-Up**: Flash and grow when errors increase
 - **XL Special Effects**: Extra spikes, fangs, claws, and energy crackling for 10+ issues
-
-## 📝 Development
-
-### Requirements
-
-- VS Code 1.85.0 or higher
-- Node.js and npm
-- TypeScript 5.3+
-
-### Build
-
-```bash
-# Install dependencies
-npm install
-
-# Compile TypeScript
-npm run compile
-
-# Watch mode for development
-npm run watch
-```
-
-### Debug
-
-1. Open the project in VS Code
-2. Press `F5` to launch Extension Development Host
-3. Test your changes in the new window
 
 ## 🤝 Contributing
 

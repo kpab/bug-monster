@@ -19,13 +19,37 @@ Bug Monsters は、診断情報（エラー、警告、ヒント）をアニメ�
 
 ## 👾 モンスタータイプ
 
-| モンスター | トリガー | 説明 |
-|---------|---------|-------------|
-| **Error Monster** | 一般的なエラー | 牙と爪を持つ攻撃的な赤いクリーチャー |
-| **TypeError Beast** | 型エラー | 角を持つ大きな紫の獣 |
-| **ReferenceError Wraith** | 参照エラー | 半透明の青い幽霊 |
-| **Warning Bug** | 警告 | 小さな黄色の羽虫 |
-| **Hint Spirit** | ヒント | 友好的な緑の光る精霊 |
+エラータイプごとにユニークなデザインとアニメーションを持つモンスターが出現します：
+
+### Error Monster 🔴
+**発生条件：** 一般的なエラー
+**説明：** 牙と爪を持つ攻撃的な赤いクリーチャー
+
+<img src="src/ui/webviewAssets/monsters/error.svg" width="150" alt="Error Monster"/>
+
+### TypeError Beast 💜
+**発生条件：** 型エラー
+**説明：** 角を持つ大きな紫の獣
+
+<img src="src/ui/webviewAssets/monsters/typeerror.svg" width="150" alt="TypeError Beast"/>
+
+### ReferenceError Wraith 🔵
+**発生条件：** 参照エラー
+**説明：** 半透明の青い幽霊
+
+<img src="src/ui/webviewAssets/monsters/referenceerror.svg" width="150" alt="ReferenceError Wraith"/>
+
+### Warning Bug 🟡
+**発生条件：** 警告
+**説明：** 小さな黄色の羽虫
+
+<img src="src/ui/webviewAssets/monsters/warning.svg" width="150" alt="Warning Bug"/>
+
+### Hint Spirit 🟢
+**発生条件：** ヒント
+**説明：** 友好的な緑の光る精霊
+
+<img src="src/ui/webviewAssets/monsters/hint.svg" width="150" alt="Hint Spirit"/>
 
 ## 📐 モンスターサイズ
 
@@ -36,21 +60,49 @@ Bug Monsters は、診断情報（エラー、警告、ヒント）をアニメ�
 - **L サイズ**: 6〜9個のエラー（170px、標準デザイン）
 - **XL サイズ**: 10個以上のエラー（210px、**より多くのトゲ、牙、エフェクトを持つ特別に怖いバリエーション**！）
 
+### XL バリエーション - 特別に恐ろしい！ 👹
+
+10個以上のエラーがあると、モンスターは恐ろしいXL形態に変身します：
+
+<table>
+<tr>
+<td align="center">
+<img src="src/ui/webviewAssets/monsters/error-xl.svg" width="200" alt="XL Error Monster"/><br/>
+<b>XL Error Monster</b>
+</td>
+<td align="center">
+<img src="src/ui/webviewAssets/monsters/typeerror-xl.svg" width="200" alt="XL TypeError Beast"/><br/>
+<b>XL TypeError Beast</b>
+</td>
+</tr>
+<tr>
+<td align="center">
+<img src="src/ui/webviewAssets/monsters/referenceerror-xl.svg" width="200" alt="XL ReferenceError Wraith"/><br/>
+<b>XL ReferenceError Wraith</b>
+</td>
+<td align="center">
+<img src="src/ui/webviewAssets/monsters/warning-xl.svg" width="200" alt="XL Warning Bug"/><br/>
+<b>XL Warning Bug</b>
+</td>
+</tr>
+</table>
+
 ## 🚀 はじめに
 
 ### インストール
 
-1. このリポジトリをクローン
-2. `npm install` で依存関係をインストール
-3. VS Code で `F5` を押して拡張機能をデバッグモードで起動
-4. 新しい VS Code ウィンドウが開きます
+1. VS Code を開く
+2. 拡張機能パネルを開く（Ctrl+Shift+X / Cmd+Shift+X）
+3. 「Bug Monsters」を検索
+4. インストールをクリック
 
 ### 使い方
 
-1. **モンスター出現**: エラーや警告が自動的にモンスターとして出現
-2. **バトルフィールド表示**: ステータスバーの剣アイコン（⚔️）をクリックしてモンスターバトルフィールドを開く
-3. **モンスター討伐**: バグを修正すると討伐アニメーションが再生
-4. **共有スペース**: すべてのモンスターが重なり合える単一のバトルフィールドに出現
+1. **モンスターが自動出現**: コードにエラーや警告があると、ステータスバーにモンスターが表示されます
+2. **バトルフィールドを開く**: ステータスバーの剣アイコン（⚔️）をクリックして全モンスターを表示
+3. **エラー箇所へ移動**: モンスターをクリックするとコード内のエラー箇所にジャンプします
+4. **モンスターを倒す**: バグを修正すると満足感のある討伐アニメーションが再生されます！
+5. **成長を見守る**: エラーが増えるほど、モンスターは大きく恐ろしく成長します
 
 ## 🎮 コマンド
 
@@ -82,47 +134,6 @@ VS Code の設定でカスタマイズ可能：
 }
 ```
 
-## 🧪 テスト
-
-拡張機能の動作を確認するには：
-
-1. 同梱の `example-test.ts` ファイルを開く
-2. 型エラーと参照エラーが表示される
-3. ステータスバーにモンスターが出現
-4. ステータスバーをクリックしてモンスターパネルを開く
-5. エラーを修正してモンスターが倒されるのを見る！
-
-エラーコードの例：
-```typescript
-const numberValue: number = "this is a string"; // TypeError Beast 出現！
-console.log(undefinedVariable); // ReferenceError Wraith 出現！
-```
-
-## 🏗️ アーキテクチャ
-
-```
-src/
-├── extension.ts              # 拡張機能エントリーポイント
-├── types.ts                  # TypeScript 型定義
-├── monsterManager.ts         # モンスター状態管理
-├── diagnosticsWatcher.ts     # VS Code 診断情報監視
-└── ui/
-    ├── panelView.ts          # Webview パネル実装
-    └── webviewAssets/
-        ├── effects/
-        │   └── styles.css    # アニメーション CSS
-        └── monsters/         # SVG モンスターデザイン
-            ├── error.svg
-            ├── error-xl.svg
-            ├── typeerror.svg
-            ├── typeerror-xl.svg
-            ├── referenceerror.svg
-            ├── referenceerror-xl.svg
-            ├── warning.svg
-            ├── warning-xl.svg
-            └── hint.svg
-```
-
 ## 🎨 モンスターアニメーション & バトルフィールド
 
 ### バトルフィールドレイアウト
@@ -145,33 +156,6 @@ src/
 - **討伐フェード**: バグ修正時の壮大な720°回転退場
 - **成長パワーアップ**: エラー増加時のフラッシュと成長
 - **XL 特殊エフェクト**: 10個以上のエラーには追加のトゲ、牙、爪、エネルギー火花
-
-## 📝 開発
-
-### 必要要件
-
-- VS Code 1.85.0 以上
-- Node.js と npm
-- TypeScript 5.3+
-
-### ビルド
-
-```bash
-# 依存関係のインストール
-npm install
-
-# TypeScript のコンパイル
-npm run compile
-
-# 開発用ウォッチモード
-npm run watch
-```
-
-### デバッグ
-
-1. VS Code でプロジェクトを開く
-2. `F5` を押して Extension Development Host を起動
-3. 新しいウィンドウで変更をテスト
 
 ## 🤝 コントリビューション
 
