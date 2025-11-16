@@ -3,7 +3,7 @@
   "displayName": "Bug Monsters👾",
   "description": "Visualize bugs and errors as monsters. Fix bugs to defeat them!",
   "version": "0.3.0",
-  "publisher": "bug-monsters",
+  "publisher": "kpab",
   "engines": {
     "vscode": "^1.85.0"
   },
