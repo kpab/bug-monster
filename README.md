@@ -21,11 +21,35 @@ Bug Monsters is a VS Code extension that gamifies the debugging process by visua
 
 Each error type spawns a unique monster with its own design and animations:
 
-- **Error Monster 🔴** - General errors: Aggressive red creature with fangs and claws
-- **TypeError Beast 💜** - Type errors: Large purple beast with horns
-- **ReferenceError Wraith 🔵** - Reference errors: Ghostly blue semi-transparent wraith
-- **Warning Bug 🟡** - Warnings: Small yellow buzzing bug
-- **Hint Spirit 🟢** - Hints: Friendly green glowing spirit
+### Error Monster 🔴
+**Triggers on:** General errors
+**Description:** Aggressive red creature with fangs and claws
+
+<img src="images/monsters/error.png" width="150" alt="Error Monster"/>
+
+### TypeError Beast 💜
+**Triggers on:** Type errors
+**Description:** Large purple beast with horns
+
+<img src="images/monsters/typeerror.png" width="150" alt="TypeError Beast"/>
+
+### ReferenceError Wraith 🔵
+**Triggers on:** Reference errors
+**Description:** Ghostly blue semi-transparent wraith
+
+<img src="images/monsters/referenceerror.png" width="150" alt="ReferenceError Wraith"/>
+
+### Warning Bug 🟡
+**Triggers on:** Warnings
+**Description:** Small yellow buzzing bug
+
+<img src="images/monsters/warning.png" width="150" alt="Warning Bug"/>
+
+### Hint Spirit 🟢
+**Triggers on:** Hints
+**Description:** Friendly green glowing spirit
+
+<img src="images/monsters/hint.png" width="150" alt="Hint Spirit"/>
 
 ## 📐 Monster Sizes
 
@@ -38,7 +62,30 @@ Monsters grow based on the number of issues:
 
 ### XL Variants - Extra Scary! 👹
 
-When you have 10 or more errors, monsters transform into their terrifying XL forms with special scary designs featuring extra spikes, fangs, claws, and energy effects!
+When you have 10 or more errors, monsters transform into their terrifying XL forms:
+
+<table>
+<tr>
+<td align="center">
+<img src="images/monsters/error-xl.png" width="200" alt="XL Error Monster"/><br/>
+<b>XL Error Monster</b>
+</td>
+<td align="center">
+<img src="images/monsters/typeerror-xl.png" width="200" alt="XL TypeError Beast"/><br/>
+<b>XL TypeError Beast</b>
+</td>
+</tr>
+<tr>
+<td align="center">
+<img src="images/monsters/referenceerror-xl.png" width="200" alt="XL ReferenceError Wraith"/><br/>
+<b>XL ReferenceError Wraith</b>
+</td>
+<td align="center">
+<img src="images/monsters/warning-xl.png" width="200" alt="XL Warning Bug"/><br/>
+<b>XL Warning Bug</b>
+</td>
+</tr>
+</table>
 
 ## 🚀 Getting Started
 

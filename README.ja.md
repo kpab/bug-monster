@@ -21,11 +21,35 @@ Bug Monsters は、診断情報（エラー、警告、ヒント）をアニメ�
 
 エラータイプごとにユニークなデザインとアニメーションを持つモンスターが出現します：
 
-- **Error Monster 🔴** - 一般的なエラー：牙と爪を持つ攻撃的な赤いクリーチャー
-- **TypeError Beast 💜** - 型エラー：角を持つ大きな紫の獣
-- **ReferenceError Wraith 🔵** - 参照エラー：半透明の青い幽霊
-- **Warning Bug 🟡** - 警告：小さな黄色の羽虫
-- **Hint Spirit 🟢** - ヒント：友好的な緑の光る精霊
+### Error Monster 🔴
+**発生条件：** 一般的なエラー
+**説明：** 牙と爪を持つ攻撃的な赤いクリーチャー
+
+<img src="images/monsters/error.png" width="150" alt="Error Monster"/>
+
+### TypeError Beast 💜
+**発生条件：** 型エラー
+**説明：** 角を持つ大きな紫の獣
+
+<img src="images/monsters/typeerror.png" width="150" alt="TypeError Beast"/>
+
+### ReferenceError Wraith 🔵
+**発生条件：** 参照エラー
+**説明：** 半透明の青い幽霊
+
+<img src="images/monsters/referenceerror.png" width="150" alt="ReferenceError Wraith"/>
+
+### Warning Bug 🟡
+**発生条件：** 警告
+**説明：** 小さな黄色の羽虫
+
+<img src="images/monsters/warning.png" width="150" alt="Warning Bug"/>
+
+### Hint Spirit 🟢
+**発生条件：** ヒント
+**説明：** 友好的な緑の光る精霊
+
+<img src="images/monsters/hint.png" width="150" alt="Hint Spirit"/>
 
 ## 📐 モンスターサイズ
 
@@ -38,7 +62,30 @@ Bug Monsters は、診断情報（エラー、警告、ヒント）をアニメ�
 
 ### XL バリエーション - 特別に恐ろしい！ 👹
 
-10個以上のエラーがあると、モンスターは恐ろしいXL形態に変身します。追加のトゲ、牙、爪、エネルギーエフェクトを持つ特別に怖いデザインです！
+10個以上のエラーがあると、モンスターは恐ろしいXL形態に変身します：
+
+<table>
+<tr>
+<td align="center">
+<img src="images/monsters/error-xl.png" width="200" alt="XL Error Monster"/><br/>
+<b>XL Error Monster</b>
+</td>
+<td align="center">
+<img src="images/monsters/typeerror-xl.png" width="200" alt="XL TypeError Beast"/><br/>
+<b>XL TypeError Beast</b>
+</td>
+</tr>
+<tr>
+<td align="center">
+<img src="images/monsters/referenceerror-xl.png" width="200" alt="XL ReferenceError Wraith"/><br/>
+<b>XL ReferenceError Wraith</b>
+</td>
+<td align="center">
+<img src="images/monsters/warning-xl.png" width="200" alt="XL Warning Bug"/><br/>
+<b>XL Warning Bug</b>
+</td>
+</tr>
+</table>
 
 ## 🚀 はじめに
 
