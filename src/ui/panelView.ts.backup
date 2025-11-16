@@ -101,11 +101,7 @@ export class MonsterPanelView {
             vscode.Uri.joinPath(this.extensionUri, 'src', 'ui', 'webviewAssets', 'effects', 'styles.css')
         );
 
-        // Generate monsters with random positions in the battlefield
-        const monstersHtml = monsters.map((m, index) => {
-            const position = this.getMonsterPosition(index, monsters.length);
-            return this.getMonsterHtml(m, theme, webview, position);
-        }).join('');
+        const monstersHtml = monsters.map(m => this.getMonsterHtml(m, theme, webview)).join('');
 
         return `<!DOCTYPE html>
 <html lang="en">
@@ -155,97 +151,99 @@ export class MonsterPanelView {
             font-size: 18px;
         }
         .monsters-container {
-            position: relative;
-            width: 100%;
-            min-height: 600px;
-            background:
-                radial-gradient(ellipse at bottom, rgba(100, 50, 50, 0.2) 0%, transparent 50%),
-                linear-gradient(180deg,
-                    var(--vscode-editor-background) 0%,
-                    rgba(50, 30, 30, 0.4) 100%);
-            border: 3px solid var(--vscode-panel-border);
-            border-radius: 12px;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 25px;
             margin-top: 20px;
-            overflow: hidden;
-            box-shadow: inset 0 0 50px rgba(0,0,0,0.5);
         }
         .monster-card {
-            position: absolute;
-            border: 2px solid rgba(255,255,255,0.1);
+            border: 2px solid var(--vscode-panel-border);
             border-radius: 12px;
-            padding: 12px;
-            background-color: rgba(30, 30, 30, 0.7);
-            backdrop-filter: blur(10px);
+            padding: 20px;
+            background-color: var(--vscode-sideBar-background);
             transition: all 0.3s ease;
             cursor: pointer;
-            overflow: visible;
+            position: relative;
+            overflow: hidden;
         }
         .monster-card:hover {
-            transform: scale(1.15);
-            box-shadow: 0 12px 32px rgba(0,0,0,0.6);
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
             border-color: var(--vscode-focusBorder);
-            z-index: 100;
         }
         .monster-card.defeated {
             opacity: 0;
-            transform: scale(0.1) rotate(720deg);
-            transition: all 1.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            transform: scale(0.3) rotate(360deg);
+            transition: all 1.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
         }
         .monster-svg-container {
             width: 100%;
+            height: 180px;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-bottom: 8px;
+            margin-bottom: 15px;
         }
         .monster-svg {
-            filter: drop-shadow(0 6px 12px rgba(0,0,0,0.4));
+            max-width: 100%;
+            max-height: 100%;
+            filter: drop-shadow(0 4px 8px rgba(0,0,0,0.2));
         }
-        .monster-card.size-S { width: 130px; }
-        .monster-card.size-S .monster-svg { width: 90px; height: 90px; }
-        .monster-card.size-M { width: 170px; }
-        .monster-card.size-M .monster-svg { width: 130px; height: 130px; }
-        .monster-card.size-L { width: 210px; }
-        .monster-card.size-L .monster-svg { width: 170px; height: 170px; }
-        .monster-card.size-XL { width: 250px; }
-        .monster-card.size-XL .monster-svg { width: 210px; height: 210px; }
+        .monster-svg-container.size-S .monster-svg { width: 120px; height: 120px; }
+        .monster-svg-container.size-M .monster-svg { width: 150px; height: 150px; }
+        .monster-svg-container.size-L .monster-svg { width: 170px; height: 170px; }
+        .monster-svg-container.size-XL .monster-svg { width: 180px; height: 180px; }
         .monster-info {
             text-align: center;
-            font-size: 11px;
         }
         .monster-type {
             font-weight: bold;
-            font-size: 13px;
-            margin-bottom: 4px;
+            font-size: 16px;
+            margin-bottom: 8px;
         }
         .monster-size {
             color: var(--vscode-descriptionForeground);
-            font-size: 10px;
-            margin-bottom: 4px;
+            font-size: 13px;
+            margin-bottom: 8px;
         }
         .monster-count {
             background-color: var(--vscode-errorForeground);
             color: white;
-            padding: 3px 8px;
-            border-radius: 10px;
-            font-size: 11px;
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 13px;
             font-weight: 600;
-            margin-top: 4px;
+            margin-top: 8px;
             display: inline-block;
         }
         .monster-file {
-            font-size: 10px;
+            font-size: 12px;
             color: var(--vscode-descriptionForeground);
-            margin-top: 4px;
+            margin-top: 8px;
             overflow: hidden;
             text-overflow: ellipsis;
             white-space: nowrap;
         }
+        .actions {
+            margin-bottom: 20px;
+        }
+        button {
+            background-color: var(--vscode-button-background);
+            color: var(--vscode-button-foreground);
+            border: none;
+            padding: 10px 20px;
+            border-radius: 6px;
+            cursor: pointer;
+            margin-right: 10px;
+            font-weight: 500;
+            transition: all 0.2s;
+        }
+        button:hover {
+            background-color: var(--vscode-button-hoverBackground);
+            transform: translateY(-2px);
+        }
         .empty-state {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
+            grid-column: 1 / -1;
             text-align: center;
             padding: 60px 20px;
             color: var(--vscode-descriptionForeground);
@@ -268,7 +266,7 @@ export class MonsterPanelView {
 </head>
 <body>
     <div class="header">
-        <h1>⚔️ Bug Monsters Battlefield</h1>
+        <h1>⚔️ Bug Monsters</h1>
         <p>Defeat the monsters by fixing your bugs!</p>
     </div>
 
@@ -287,6 +285,10 @@ export class MonsterPanelView {
         </div>
     </div>
 
+    <div class="actions">
+        <button onclick="clearAllMonsters()">🧹 Clear All Monsters</button>
+    </div>
+
     <div class="monsters-container" id="monsters">
         ${monsters.length === 0 ? `
             <div class="empty-state">
@@ -299,6 +301,10 @@ export class MonsterPanelView {
 
     <script>
         const vscode = acquireVsCodeApi();
+
+        function clearAllMonsters() {
+            vscode.postMessage({ command: 'clearAll' });
+        }
 
         function openFile(uri) {
             vscode.postMessage({ command: 'openFile', uri: uri });
@@ -320,35 +326,14 @@ export class MonsterPanelView {
 </html>`;
     }
 
-    private getMonsterPosition(index: number, total: number): { left: string; top: string } {
-        // Distribute monsters across the battlefield
-        // Use a semi-random but predictable layout based on index
-        const positions = [
-            { left: '10%', top: '15%' },
-            { left: '70%', top: '20%' },
-            { left: '40%', top: '10%' },
-            { left: '25%', top: '55%' },
-            { left: '80%', top: '65%' },
-            { left: '50%', top: '40%' },
-            { left: '15%', top: '75%' },
-            { left: '65%', top: '80%' },
-            { left: '35%', top: '70%' },
-            { left: '85%', top: '30%' },
-        ];
-
-        return positions[index % positions.length];
-    }
-
-    private getMonsterHtml(monster: Monster, theme: string, webview: vscode.Webview, position: { left: string; top: string }): string {
-        const svgUri = this.getMonsterSvgUri(monster.type, webview, monster.size);
+    private getMonsterHtml(monster: Monster, theme: string, webview: vscode.Webview): string {
+        const svgUri = this.getMonsterSvgUri(monster.type, webview);
         const typeLabel = this.getTypeLabel(monster.type);
         const fileName = path.basename(monster.uri);
 
         return `
-        <div class="monster-card size-${monster.size}" id="${monster.id}"
-             onclick="openFile('${monster.uri}')"
-             style="left: ${position.left}; top: ${position.top};">
-            <div class="monster-svg-container">
+        <div class="monster-card" id="${monster.id}" onclick="openFile('${monster.uri}')">
+            <div class="monster-svg-container size-${monster.size}">
                 <img src="${svgUri}" alt="${typeLabel}" class="monster-svg" />
             </div>
             <div class="monster-info">
@@ -362,41 +347,16 @@ export class MonsterPanelView {
         </div>`;
     }
 
-    private getMonsterSvgUri(type: string, webview: vscode.Webview, size: string): string {
-        const svgFiles: Record<string, Record<string, string>> = {
-            'error': {
-                'S': 'error.svg',
-                'M': 'error.svg',
-                'L': 'error.svg',
-                'XL': 'error-xl.svg'
-            },
-            'warning': {
-                'S': 'warning.svg',
-                'M': 'warning.svg',
-                'L': 'warning.svg',
-                'XL': 'warning-xl.svg'
-            },
-            'hint': {
-                'S': 'hint.svg',
-                'M': 'hint.svg',
-                'L': 'hint.svg',
-                'XL': 'hint.svg'
-            },
-            'typeError': {
-                'S': 'typeerror.svg',
-                'M': 'typeerror.svg',
-                'L': 'typeerror.svg',
-                'XL': 'typeerror-xl.svg'
-            },
-            'referenceError': {
-                'S': 'referenceerror.svg',
-                'M': 'referenceerror.svg',
-                'L': 'referenceerror.svg',
-                'XL': 'referenceerror-xl.svg'
-            }
+    private getMonsterSvgUri(type: string, webview: vscode.Webview): string {
+        const svgFiles: Record<string, string> = {
+            'error': 'error.svg',
+            'warning': 'warning.svg',
+            'hint': 'hint.svg',
+            'typeError': 'typeerror.svg',
+            'referenceError': 'referenceerror.svg'
         };
 
-        const svgFile = (svgFiles[type] && svgFiles[type][size]) || 'error.svg';
+        const svgFile = svgFiles[type] || 'error.svg';
         const svgPath = vscode.Uri.joinPath(
             this.extensionUri,
             'src',

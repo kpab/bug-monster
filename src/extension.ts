@@ -45,12 +45,6 @@ export function activate(context: vscode.ExtensionContext) {
         })
     );
 
-    context.subscriptions.push(
-        vscode.commands.registerCommand('bugMonsters.clearAll', () => {
-            monsterManager.clearAll();
-            vscode.window.showInformationMessage('⚔️ All monsters have been defeated!');
-        })
-    );
 
     // Listen to configuration changes
     context.subscriptions.push(

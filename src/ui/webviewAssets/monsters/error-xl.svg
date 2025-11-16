@@ -1,0 +1,151 @@
+<!-- Error Monster XL - Extremely scary and dangerous version -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300" width="300" height="300">
+  <defs>
+    <filter id="darkGlow">
+      <feGaussianBlur stdDeviation="6" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Ominous shadow -->
+  <ellipse cx="150" cy="270" rx="100" ry="20" fill="#000" opacity="0.4">
+    <animate attributeName="rx" values="100;120;100" dur="2s" repeatCount="indefinite"/>
+  </ellipse>
+
+  <!-- Body -->
+  <g id="body" filter="url(#darkGlow)">
+    <!-- Main body - larger and more menacing -->
+    <ellipse cx="150" cy="150" rx="90" ry="95" fill="#cc0000">
+      <animate attributeName="ry" values="95;100;95" dur="1.2s" repeatCount="indefinite"/>
+    </ellipse>
+
+    <!-- Multiple layers of spikes -->
+    <g id="top-spikes">
+      <polygon points="110,60 118,30 126,60" fill="#990000">
+        <animateTransform attributeName="transform" type="rotate" from="0 118 45" to="15 118 45" dur="0.4s" repeatCount="indefinite" direction="alternate"/>
+      </polygon>
+      <polygon points="135,45 143,15 151,45" fill="#990000">
+        <animateTransform attributeName="transform" type="rotate" from="0 143 30" to="-15 143 30" dur="0.5s" repeatCount="indefinite" direction="alternate"/>
+      </polygon>
+      <polygon points="160,50 168,25 176,50" fill="#990000">
+        <animateTransform attributeName="transform" type="rotate" from="0 168 37" to="12 168 37" dur="0.45s" repeatCount="indefinite" direction="alternate"/>
+      </polygon>
+      <polygon points="88,75 95,50 102,75" fill="#990000">
+        <animateTransform attributeName="transform" type="rotate" from="0 95 62" to="-18 95 62" dur="0.48s" repeatCount="indefinite" direction="alternate"/>
+      </polygon>
+      <polygon points="185,70 192,45 199,70" fill="#990000">
+        <animateTransform attributeName="transform" type="rotate" from="0 192 57" to="18 192 57" dur="0.46s" repeatCount="indefinite" direction="alternate"/>
+      </polygon>
+    </g>
+
+    <!-- Angry eyes with red glow -->
+    <g id="eyes">
+      <ellipse cx="115" cy="125" rx="18" ry="28" fill="#ff0000" opacity="0.5"/>
+      <ellipse cx="185" cy="125" rx="18" ry="28" fill="#ff0000" opacity="0.5"/>
+      <ellipse cx="115" cy="125" rx="16" ry="25" fill="#fff"/>
+      <ellipse cx="185" cy="125" rx="16" ry="25" fill="#fff"/>
+      <circle cx="118" cy="132" r="13" fill="#000">
+        <animate attributeName="cy" values="132;135;132" dur="2.5s" repeatCount="indefinite"/>
+        <animate attributeName="r" values="13;15;13" dur="2s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="182" cy="132" r="13" fill="#000">
+        <animate attributeName="cy" values="132;135;132" dur="2.5s" repeatCount="indefinite"/>
+        <animate attributeName="r" values="13;15;13" dur="2s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="121" cy="128" r="5" fill="#ff0000" opacity="0.8">
+        <animate attributeName="opacity" values="0.8;0.4;0.8" dur="1.5s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="185" cy="128" r="5" fill="#ff0000" opacity="0.8">
+        <animate attributeName="opacity" values="0.8;0.4;0.8" dur="1.5s" repeatCount="indefinite"/>
+      </circle>
+    </g>
+
+    <!-- Fierce angry eyebrows -->
+    <path d="M 95 110 L 125 100" stroke="#660000" stroke-width="7" stroke-linecap="round"/>
+    <path d="M 205 110 L 175 100" stroke="#660000" stroke-width="7" stroke-linecap="round"/>
+
+    <!-- Large terrifying mouth with many fangs -->
+    <path d="M 90 170 Q 150 195 210 170" stroke="#000" stroke-width="5" fill="none"/>
+    <ellipse cx="150" cy="185" rx="50" ry="25" fill="#330000" opacity="0.8"/>
+
+    <!-- Multiple rows of fangs -->
+    <g id="fangs">
+      <polygon points="110,170 115,195 120,170" fill="#fff" opacity="0.95">
+        <animate attributeName="points" values="110,170 115,195 120,170; 110,170 115,200 120,170; 110,170 115,195 120,170" dur="1.8s" repeatCount="indefinite"/>
+      </polygon>
+      <polygon points="130,175 135,200 140,175" fill="#fff" opacity="0.95">
+        <animate attributeName="points" values="130,175 135,200 140,175; 130,175 135,205 140,175; 130,175 135,200 140,175" dur="1.8s" repeatCount="indefinite"/>
+      </polygon>
+      <polygon points="160,175 165,200 170,175" fill="#fff" opacity="0.95">
+        <animate attributeName="points" values="160,175 165,200 170,175; 160,175 165,205 170,175; 160,175 165,200 170,175" dur="1.8s" repeatCount="indefinite"/>
+      </polygon>
+      <polygon points="180,170 185,195 190,170" fill="#fff" opacity="0.95">
+        <animate attributeName="points" values="180,170 185,195 190,170; 180,170 185,200 190,170; 180,170 185,195 190,170" dur="1.8s" repeatCount="indefinite"/>
+      </polygon>
+      <!-- Smaller fangs between -->
+      <polygon points="120,172 123,185 126,172" fill="#fff" opacity="0.9"/>
+      <polygon points="145,177 148,190 151,177" fill="#fff" opacity="0.9"/>
+      <polygon points="173,172 176,185 179,172" fill="#fff" opacity="0.9"/>
+    </g>
+
+    <!-- Large menacing arms with sharp claws -->
+    <g id="arms">
+      <ellipse cx="60" cy="160" rx="28" ry="50" fill="#cc0000">
+        <animateTransform attributeName="transform" type="rotate" from="-25 60 160" to="-35 60 160" dur="0.8s" repeatCount="indefinite" direction="alternate"/>
+      </ellipse>
+      <ellipse cx="240" cy="160" rx="28" ry="50" fill="#cc0000">
+        <animateTransform attributeName="transform" type="rotate" from="25 240 160" to="35 240 160" dur="0.8s" repeatCount="indefinite" direction="alternate"/>
+      </ellipse>
+
+      <!-- Sharp claws -->
+      <g id="left-claw">
+        <path d="M 45 195 L 35 215" stroke="#660000" stroke-width="6" stroke-linecap="round"/>
+        <path d="M 52 200 L 45 220" stroke="#660000" stroke-width="6" stroke-linecap="round"/>
+        <path d="M 60 198 L 55 218" stroke="#660000" stroke-width="6" stroke-linecap="round"/>
+        <path d="M 38 190 L 30 210" stroke="#660000" stroke-width="5" stroke-linecap="round"/>
+      </g>
+      <g id="right-claw">
+        <path d="M 255 195 L 265 215" stroke="#660000" stroke-width="6" stroke-linecap="round"/>
+        <path d="M 248 200 L 255 220" stroke="#660000" stroke-width="6" stroke-linecap="round"/>
+        <path d="M 240 198 L 245 218" stroke="#660000" stroke-width="6" stroke-linecap="round"/>
+        <path d="M 262 190 L 270 210" stroke="#660000" stroke-width="5" stroke-linecap="round"/>
+      </g>
+    </g>
+
+    <!-- Body spikes on sides -->
+    <g id="side-spikes">
+      <polygon points="55,120 40,125 55,130" fill="#990000"/>
+      <polygon points="55,145 35,150 55,155" fill="#990000"/>
+      <polygon points="50,170 30,175 50,180" fill="#990000"/>
+      <polygon points="245,120 260,125 245,130" fill="#990000"/>
+      <polygon points="245,145 265,150 245,155" fill="#990000"/>
+      <polygon points="250,170 270,175 250,180" fill="#990000"/>
+    </g>
+  </g>
+
+  <!-- Multiple pulsing auras for extra menace -->
+  <circle cx="150" cy="150" r="110" fill="none" stroke="#ff0000" stroke-width="3" opacity="0.6">
+    <animate attributeName="r" values="110;125;110" dur="2s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.6;0.2;0.6" dur="2s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="150" cy="150" r="95" fill="none" stroke="#cc0000" stroke-width="4" opacity="0.4">
+    <animate attributeName="r" values="95;105;95" dur="1.5s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.4;0.1;0.4" dur="1.5s" repeatCount="indefinite"/>
+  </circle>
+
+  <!-- Crackling energy effect -->
+  <g id="energy-crackles" opacity="0.7">
+    <path d="M 150 50 L 155 40 L 150 30" stroke="#ff3333" stroke-width="2" fill="none">
+      <animate attributeName="opacity" values="0.7;0;0.7" dur="0.5s" repeatCount="indefinite"/>
+    </path>
+    <path d="M 60 150 L 45 155 L 35 150" stroke="#ff3333" stroke-width="2" fill="none">
+      <animate attributeName="opacity" values="0;0.7;0" dur="0.6s" repeatCount="indefinite"/>
+    </path>
+    <path d="M 240 150 L 255 155 L 265 150" stroke="#ff3333" stroke-width="2" fill="none">
+      <animate attributeName="opacity" values="0.7;0;0.7" dur="0.7s" repeatCount="indefinite"/>
+    </path>
+  </g>
+</svg>

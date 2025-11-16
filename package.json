@@ -65,10 +65,6 @@
       {
         "command": "bugMonsters.openPanel",
         "title": "Bug Monsters: Open Monster Panel"
-      },
-      {
-        "command": "bugMonsters.clearAll",
-        "title": "Bug Monsters: Clear All Monsters"
       }
     ]
   },

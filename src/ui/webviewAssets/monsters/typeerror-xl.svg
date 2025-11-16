@@ -1,0 +1,86 @@
+<!-- TypeError Beast - Large purple beast -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <!-- Shadow -->
+  <ellipse cx="100" cy="185" rx="70" ry="12" fill="#000" opacity="0.3">
+    <animate attributeName="rx" values="70;80;70" dur="3s" repeatCount="indefinite"/>
+  </ellipse>
+
+  <!-- Body -->
+  <g id="body">
+    <!-- Main body -->
+    <ellipse cx="100" cy="110" rx="65" ry="70" fill="#8B4789">
+      <animate attributeName="ry" values="70;75;70" dur="2s" repeatCount="indefinite"/>
+    </ellipse>
+
+    <!-- Belly -->
+    <ellipse cx="100" cy="120" rx="45" ry="50" fill="#9D5C9B" opacity="0.7"/>
+
+    <!-- Head -->
+    <circle cx="100" cy="70" r="45" fill="#8B4789">
+      <animate attributeName="r" values="45;48;45" dur="2.5s" repeatCount="indefinite"/>
+    </circle>
+
+    <!-- Horns -->
+    <path d="M 65 50 Q 55 35 50 25" stroke="#5C2E5C" stroke-width="8" fill="none" stroke-linecap="round">
+      <animateTransform attributeName="transform" type="rotate" from="-5 65 50" to="-10 65 50" dur="1.5s" repeatCount="indefinite" direction="alternate"/>
+    </path>
+    <path d="M 135 50 Q 145 35 150 25" stroke="#5C2E5C" stroke-width="8" fill="none" stroke-linecap="round">
+      <animateTransform attributeName="transform" type="rotate" from="5 135 50" to="10 135 50" dur="1.5s" repeatCount="indefinite" direction="alternate"/>
+    </path>
+
+    <!-- Horn tips -->
+    <circle cx="50" cy="25" r="6" fill="#5C2E5C"/>
+    <circle cx="150" cy="25" r="6" fill="#5C2E5C"/>
+
+    <!-- Eyes -->
+    <ellipse cx="80" cy="65" rx="14" ry="20" fill="#FFD700">
+      <animate attributeName="ry" values="20;18;20" dur="3s" repeatCount="indefinite"/>
+    </ellipse>
+    <ellipse cx="120" cy="65" rx="14" ry="20" fill="#FFD700">
+      <animate attributeName="ry" values="20;18;20" dur="3s" repeatCount="indefinite"/>
+    </ellipse>
+    <rect x="75" y="60" width="10" height="15" fill="#000" rx="2">
+      <animate attributeName="height" values="15;10;15" dur="4s" repeatCount="indefinite"/>
+    </rect>
+    <rect x="115" y="60" width="10" height="15" fill="#000" rx="2">
+      <animate attributeName="height" values="15;10;15" dur="4s" repeatCount="indefinite"/>
+    </rect>
+
+    <!-- Snout -->
+    <ellipse cx="100" cy="85" rx="25" ry="18" fill="#9D5C9B"/>
+
+    <!-- Nostrils -->
+    <ellipse cx="92" cy="88" rx="4" ry="6" fill="#5C2E5C"/>
+    <ellipse cx="108" cy="88" rx="4" ry="6" fill="#5C2E5C"/>
+
+    <!-- Teeth -->
+    <polygon points="85,95 88,105 91,95" fill="#fff" opacity="0.9"/>
+    <polygon points="109,95 112,105 115,95" fill="#fff" opacity="0.9"/>
+
+    <!-- Ears -->
+    <ellipse cx="55" cy="55" rx="15" ry="25" fill="#8B4789">
+      <animateTransform attributeName="transform" type="rotate" from="-25 55 55" to="-30 55 55" dur="2s" repeatCount="indefinite" direction="alternate"/>
+    </ellipse>
+    <ellipse cx="145" cy="55" rx="15" ry="25" fill="#8B4789">
+      <animateTransform attributeName="transform" type="rotate" from="25 145 55" to="30 145 55" dur="2s" repeatCount="indefinite" direction="alternate"/>
+    </ellipse>
+
+    <!-- Arms -->
+    <ellipse cx="45" cy="120" rx="18" ry="40" fill="#8B4789">
+      <animateTransform attributeName="transform" type="rotate" from="-15 45 120" to="-25 45 120" dur="1.8s" repeatCount="indefinite" direction="alternate"/>
+    </ellipse>
+    <ellipse cx="155" cy="120" rx="18" ry="40" fill="#8B4789">
+      <animateTransform attributeName="transform" type="rotate" from="15 155 120" to="25 155 120" dur="1.8s" repeatCount="indefinite" direction="alternate"/>
+    </ellipse>
+
+    <!-- Paws -->
+    <circle cx="45" cy="155" r="12" fill="#5C2E5C"/>
+    <circle cx="155" cy="155" r="12" fill="#5C2E5C"/>
+  </g>
+
+  <!-- Energy aura -->
+  <circle cx="100" cy="100" r="85" fill="none" stroke="#B666D2" stroke-width="3" opacity="0.4">
+    <animate attributeName="r" values="85;95;85" dur="3s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.4;0.1;0.4" dur="3s" repeatCount="indefinite"/>
+  </circle>
+</svg>
