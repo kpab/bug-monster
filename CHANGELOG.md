@@ -2,6 +2,39 @@
 
 All notable changes to the Bug Monsters extension will be documented in this file.
 
+## [0.3.0] - 2024-11-16
+
+### Added
+- **Battlefield Layout**: All monsters now appear in a single shared battlefield space
+  - Absolute positioning allows monsters to overlap naturally
+  - Dark atmospheric background with gradients and inner shadows
+  - 10 predefined positions distributed across the battlefield
+  - 600px minimum height for epic monster battles
+  - Semi-transparent monster cards with backdrop blur
+- **Size-Specific SVG Variants**: XL monsters get special scary designs
+  - error-xl.svg: Massive version with extra spikes, fangs, and claws
+  - typeerror-xl.svg: Enlarged purple beast variant
+  - referenceerror-xl.svg: Larger ghostly wraith
+  - warning-xl.svg: Bigger bug variant
+  - 10+ errors now spawn significantly more menacing monsters
+
+### Removed
+- **Clear All Monsters functionality**: Removed to keep focus on fixing bugs
+  - Removed `clearAll` command from package.json
+  - Removed clearAll button from monster panel
+  - Monsters can only be defeated by fixing the actual bugs
+
+### Changed
+- Panel title updated to "Bug Monsters Battlefield"
+- Defeat animation enhanced to 720° rotation
+- Monster card sizes adjusted: S=130px, M=170px, L=210px, XL=250px
+- Hover effect changed from translateY to scale(1.15) for better battlefield feel
+
+### Technical
+- Added `getMonsterPosition()` method for battlefield positioning
+- Updated `getMonsterSvgUri()` to support size-specific SVG files
+- Refactored `getMonsterHtml()` to accept position parameter
+
 ## [0.2.0] - 2024-11-16
 
 ### Added
@@ -45,7 +78,7 @@ All notable changes to the Bug Monsters extension will be documented in this fil
 - Status bar integration
 - Basic defeat animations
 - Configuration settings
-- Commands: toggle, openPanel, clearAll
+- Commands: toggle, openPanel
 - Basic CSS animations
 
 ## [Unreleased]
