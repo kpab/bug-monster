@@ -51,42 +51,6 @@ Each error type spawns a unique monster with its own design and animations:
 
 <img src="images/monsters/hint.png" width="150" alt="Hint Spirit"/>
 
-## 📐 Monster Sizes
-
-Monsters grow based on the number of issues:
-
-- **S Size**: 1-2 issues (90px, standard design)
-- **M Size**: 3-5 issues (130px, standard design)
-- **L Size**: 6-9 issues (170px, standard design)
-- **XL Size**: 10+ issues (210px, **special scary variant** with more spikes, fangs, and effects!)
-
-### XL Variants - Extra Scary! 👹
-
-When you have 10 or more errors, monsters transform into their terrifying XL forms:
-
-<table>
-<tr>
-<td align="center">
-<img src="images/monsters/error-xl.png" width="200" alt="XL Error Monster"/><br/>
-<b>XL Error Monster</b>
-</td>
-<td align="center">
-<img src="images/monsters/typeerror-xl.png" width="200" alt="XL TypeError Beast"/><br/>
-<b>XL TypeError Beast</b>
-</td>
-</tr>
-<tr>
-<td align="center">
-<img src="images/monsters/referenceerror-xl.png" width="200" alt="XL ReferenceError Wraith"/><br/>
-<b>XL ReferenceError Wraith</b>
-</td>
-<td align="center">
-<img src="images/monsters/warning-xl.png" width="200" alt="XL Warning Bug"/><br/>
-<b>XL Warning Bug</b>
-</td>
-</tr>
-</table>
-
 ## 🚀 Getting Started
 
 ### Installation

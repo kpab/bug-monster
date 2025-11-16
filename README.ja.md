@@ -51,42 +51,6 @@ Bug Monsters は、診断情報（エラー、警告、ヒント）をアニメ�
 
 <img src="images/monsters/hint.png" width="150" alt="Hint Spirit"/>
 
-## 📐 モンスターサイズ
-
-エラー数に応じてモンスターが成長します：
-
-- **S サイズ**: 1〜2個のエラー（90px、標準デザイン）
-- **M サイズ**: 3〜5個のエラー（130px、標準デザイン）
-- **L サイズ**: 6〜9個のエラー（170px、標準デザイン）
-- **XL サイズ**: 10個以上のエラー（210px、**より多くのトゲ、牙、エフェクトを持つ特別に怖いバリエーション**！）
-
-### XL バリエーション - 特別に恐ろしい！ 👹
-
-10個以上のエラーがあると、モンスターは恐ろしいXL形態に変身します：
-
-<table>
-<tr>
-<td align="center">
-<img src="images/monsters/error-xl.png" width="200" alt="XL Error Monster"/><br/>
-<b>XL Error Monster</b>
-</td>
-<td align="center">
-<img src="images/monsters/typeerror-xl.png" width="200" alt="XL TypeError Beast"/><br/>
-<b>XL TypeError Beast</b>
-</td>
-</tr>
-<tr>
-<td align="center">
-<img src="images/monsters/referenceerror-xl.png" width="200" alt="XL ReferenceError Wraith"/><br/>
-<b>XL ReferenceError Wraith</b>
-</td>
-<td align="center">
-<img src="images/monsters/warning-xl.png" width="200" alt="XL Warning Bug"/><br/>
-<b>XL Warning Bug</b>
-</td>
-</tr>
-</table>
-
 ## 🚀 はじめに
 
 ### インストール
