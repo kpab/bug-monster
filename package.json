@@ -2,7 +2,7 @@
   "name": "bug-monsters",
   "displayName": "Bug Monsters - バグの可視化モンスター",
   "description": "Visualize bugs and errors as monsters. Fix bugs to defeat them!",
-  "version": "0.1.0",
+  "version": "0.3.0",
   "publisher": "bug-monsters",
   "engines": {
     "vscode": "^1.85.0"
