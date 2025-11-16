@@ -1,0 +1,90 @@
+{
+  "name": "bug-monsters",
+  "displayName": "Bug Monsters - バグの可視化モンスター",
+  "description": "Visualize bugs and errors as monsters. Fix bugs to defeat them!",
+  "version": "0.1.0",
+  "publisher": "bug-monsters",
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "Other",
+    "Visualization"
+  ],
+  "keywords": [
+    "bugs",
+    "errors",
+    "gamification",
+    "diagnostics",
+    "visualization"
+  ],
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "configuration": {
+      "title": "Bug Monsters",
+      "properties": {
+        "bugMonsters.enable": {
+          "type": "boolean",
+          "default": true,
+          "description": "Enable or disable Bug Monsters extension"
+        },
+        "bugMonsters.maxMonsters": {
+          "type": "number",
+          "default": 5,
+          "minimum": 1,
+          "maximum": 10,
+          "description": "Maximum number of monsters to display simultaneously"
+        },
+        "bugMonsters.showOnWarnings": {
+          "type": "boolean",
+          "default": true,
+          "description": "Show small monsters for warnings"
+        },
+        "bugMonsters.animationSpeed": {
+          "type": "string",
+          "default": "normal",
+          "enum": ["slow", "normal", "fast"],
+          "description": "Speed of monster animations"
+        },
+        "bugMonsters.monsterTheme": {
+          "type": "string",
+          "default": "fantasy",
+          "enum": ["fantasy", "cyber", "cute"],
+          "description": "Visual theme for monsters"
+        }
+      }
+    },
+    "commands": [
+      {
+        "command": "bugMonsters.toggle",
+        "title": "Bug Monsters: Toggle Enable/Disable"
+      },
+      {
+        "command": "bugMonsters.openPanel",
+        "title": "Bug Monsters: Open Monster Panel"
+      },
+      {
+        "command": "bugMonsters.clearAll",
+        "title": "Bug Monsters: Clear All Monsters"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile",
+    "lint": "eslint src --ext ts"
+  },
+  "devDependencies": {
+    "@types/node": "^20.x",
+    "@types/vscode": "^1.85.0",
+    "@typescript-eslint/eslint-plugin": "^6.x",
+    "@typescript-eslint/parser": "^6.x",
+    "eslint": "^8.x",
+    "typescript": "^5.3.0"
+  }
+}

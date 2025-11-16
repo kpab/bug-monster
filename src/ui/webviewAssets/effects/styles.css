@@ -1,0 +1,186 @@
+/* Bug Monsters CSS Animations and Styles */
+
+:root {
+    --animation-speed-slow: 3s;
+    --animation-speed-normal: 1.5s;
+    --animation-speed-fast: 0.8s;
+}
+
+/* Monster appearance animation */
+@keyframes monsterAppear {
+    0% {
+        opacity: 0;
+        transform: scale(0.5) translateY(50px);
+    }
+    50% {
+        transform: scale(1.1) translateY(-10px);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+/* Monster floating animation */
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-15px);
+    }
+}
+
+/* Monster shake animation (when growing) */
+@keyframes shake {
+    0%, 100% {
+        transform: translateX(0);
+    }
+    10%, 30%, 50%, 70%, 90% {
+        transform: translateX(-5px);
+    }
+    20%, 40%, 60%, 80% {
+        transform: translateX(5px);
+    }
+}
+
+/* Monster defeat animation */
+@keyframes defeatFade {
+    0% {
+        opacity: 1;
+        transform: scale(1) rotate(0deg);
+    }
+    50% {
+        opacity: 0.5;
+        transform: scale(1.2) rotate(180deg);
+    }
+    100% {
+        opacity: 0;
+        transform: scale(0.3) rotate(360deg);
+    }
+}
+
+/* Monster split animation */
+@keyframes split {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.3);
+        filter: blur(2px);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Pulse animation for errors */
+@keyframes pulse {
+    0%, 100% {
+        box-shadow: 0 0 0 0 rgba(255, 0, 0, 0.7);
+    }
+    50% {
+        box-shadow: 0 0 0 10px rgba(255, 0, 0, 0);
+    }
+}
+
+/* Warning bug bounce */
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-20px);
+    }
+    60% {
+        transform: translateY(-10px);
+    }
+}
+
+/* Glow effect for hints */
+@keyframes glow {
+    0%, 100% {
+        filter: brightness(1);
+        text-shadow: 0 0 5px rgba(255, 255, 0, 0.5);
+    }
+    50% {
+        filter: brightness(1.5);
+        text-shadow: 0 0 20px rgba(255, 255, 0, 1);
+    }
+}
+
+/* Apply animations to monster cards */
+.monster-card {
+    animation: monsterAppear var(--animation-speed-normal) ease-out;
+}
+
+.monster-card.error .monster-icon {
+    animation: float 3s ease-in-out infinite, pulse 2s ease-in-out infinite;
+}
+
+.monster-card.warning .monster-icon {
+    animation: bounce 2s ease-in-out infinite;
+}
+
+.monster-card.hint .monster-icon {
+    animation: glow 2s ease-in-out infinite;
+}
+
+.monster-card.growing {
+    animation: shake 0.5s ease-in-out;
+}
+
+.monster-card.splitting {
+    animation: split 1s ease-in-out;
+}
+
+.monster-card.defeated {
+    animation: defeatFade 1s ease-out forwards;
+}
+
+/* Size-based scaling */
+.monster-size-S .monster-icon {
+    font-size: 40px;
+}
+
+.monster-size-M .monster-icon {
+    font-size: 60px;
+}
+
+.monster-size-L .monster-icon {
+    font-size: 80px;
+}
+
+.monster-size-XL .monster-icon {
+    font-size: 100px;
+}
+
+/* Theme variations */
+.theme-fantasy .monster-icon {
+    filter: drop-shadow(0 0 10px rgba(128, 0, 128, 0.5));
+}
+
+.theme-cyber .monster-icon {
+    filter: drop-shadow(0 0 10px rgba(0, 255, 255, 0.8));
+}
+
+.theme-cute .monster-icon {
+    filter: drop-shadow(0 0 5px rgba(255, 192, 203, 0.7));
+}
+
+/* Victory celebration */
+@keyframes celebrate {
+    0%, 100% {
+        transform: rotate(0deg) scale(1);
+    }
+    25% {
+        transform: rotate(-10deg) scale(1.1);
+    }
+    75% {
+        transform: rotate(10deg) scale(1.1);
+    }
+}
+
+.celebrating {
+    animation: celebrate 0.5s ease-in-out 3;
+}
