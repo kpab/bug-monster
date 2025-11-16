@@ -4,6 +4,8 @@
   "description": "Visualize bugs and errors as monsters. Fix bugs to defeat them!",
   "version": "0.3.0",
   "publisher": "kpab",
+  "license": "MIT",
+  "icon": "icon.png",
   "engines": {
     "vscode": "^1.85.0"
   },
