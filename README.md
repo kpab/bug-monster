@@ -10,8 +10,10 @@ Bug Monsters is a VS Code extension that gamifies the debugging process by visua
 - **⚡ Real-time Monitoring**: Instantly spawns monsters when errors appear
 - **⚔️ Defeat Animations**: Satisfying animations when you fix bugs
 - **📊 Live Statistics**: Track errors, warnings, and defeated monsters
-- **🎮 Size Progression**: Monsters grow larger as errors accumulate
+- **🎮 Size Progression**: Monsters grow larger and scarier as errors accumulate
 - **🎯 Click to Navigate**: Click any monster to jump to the error in your code
+- **🏟️ Battlefield Layout**: All monsters appear in a shared battlefield space where they can overlap
+- **👹 XL Variants**: Special scary SVG designs for monsters with 10+ issues
 
 ## 👾 Monster Types
 
@@ -27,10 +29,10 @@ Bug Monsters is a VS Code extension that gamifies the debugging process by visua
 
 Monsters grow based on the number of issues:
 
-- **S Size**: 1-2 issues
-- **M Size**: 3-5 issues
-- **L Size**: 6-9 issues
-- **XL Size**: 10+ issues (extra angry!)
+- **S Size**: 1-2 issues (90px, standard design)
+- **M Size**: 3-5 issues (130px, standard design)
+- **L Size**: 6-9 issues (170px, standard design)
+- **XL Size**: 10+ issues (210px, **special scary variant** with more spikes, fangs, and effects!)
 
 ## 🚀 Getting Started
 
@@ -44,17 +46,16 @@ Monsters grow based on the number of issues:
 ### Usage
 
 1. **Monsters Spawn**: Errors and warnings automatically spawn monsters
-2. **View Panel**: Click the sword icon (⚔️) in the status bar to open the Monster Panel
+2. **View Battlefield**: Click the sword icon (⚔️) in the status bar to open the Monster Battlefield
 3. **Defeat Monsters**: Fix your bugs to see the defeat animation
-4. **Clear All**: Use the "Clear All Monsters" button or command to reset
+4. **Shared Space**: All monsters appear in a single battlefield where they can overlap
 
 ## 🎮 Commands
 
 Access these via the Command Palette (`Ctrl/Cmd+Shift+P`):
 
 - `Bug Monsters: Toggle Enable/Disable` - Turn the extension on/off
-- `Bug Monsters: Open Monster Panel` - View all active monsters
-- `Bug Monsters: Clear All Monsters` - Defeat all monsters instantly
+- `Bug Monsters: Open Monster Panel` - View all active monsters on the battlefield
 
 ## ⚙️ Configuration
 
@@ -116,7 +117,18 @@ src/
             └── hint.svg
 ```
 
-## 🎨 Monster Animations
+## 🎨 Monster Animations & Battlefield
+
+### Battlefield Layout
+
+Monsters appear in a shared battlefield space:
+- **Dark atmospheric background** with gradient effects
+- **Absolute positioning**: Monsters can overlap and move freely
+- **10 predefined positions** distributed across the battlefield
+- **Semi-transparent cards** with backdrop blur for depth
+- **600px minimum height** for epic battles
+
+### Animations
 
 Each monster features sophisticated SVG animations:
 
@@ -124,8 +136,9 @@ Each monster features sophisticated SVG animations:
 - **Angry Shake**: Error monsters shake aggressively
 - **Floating**: Gentle up-and-down movement
 - **Spawn Explosion**: Dramatic entrance when appearing
-- **Defeat Fade**: Spectacular exit when bugs are fixed
+- **Defeat Fade**: Spectacular 720° rotation exit when bugs are fixed
 - **Growing Power-Up**: Flash and grow when errors increase
+- **XL Special Effects**: Extra spikes, fangs, claws, and energy crackling for 10+ issues
 
 ## 📝 Development
 
