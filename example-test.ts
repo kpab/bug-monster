@@ -1,27 +1,39 @@
 // Bug Monsters Extension - Test File
-// このファイルで拡張機能をテストできます
+// Use this file to test the extension features
 
-// 🔴 Error Monster - TypeError Beast を召喚
+// 🔴 Spawn an Error Monster - TypeError Beast
 const numberValue: number = "this is a string"; // Type error!
 
-// 🔴 Error Monster - ReferenceError Wraith を召喚
+// 🔴 Spawn a ReferenceError Wraith
 console.log(undefinedVariable); // Reference error!
 
-// 🟡 Warning Bug を召喚（ESLint が有効な場合）
+// 🟡 Spawn a Warning Bug (if ESLint is enabled)
 var oldStyleVariable = "use let or const instead";
 
-// 複数のエラーでモンスターがサイズアップ
+// Multiple errors make monsters grow in size
 const x: number = "error1";
 const y: number = "error2";
 const z: number = "error3";
 
-// エラーを修正してモンスターを討伐！
-// 例: const numberValue: string = "this is a string";
+// Fix errors to defeat the monsters!
+// Example fix: const numberValue: string = "this is a string";
 
 /*
-テスト手順:
-1. VS Code でこのファイルを開く
-2. ステータスバーにモンスターアイコンが表示される
-3. アイコンをクリックして Monster Panel を開く
-4. エラーを修正してモンスターが倒れるアニメーションを確認
+Testing Instructions:
+1. Open this file in VS Code with the Bug Monsters extension active
+2. Monster icons will appear in the status bar (⚔️)
+3. Click the status bar icon to open the Monster Panel
+4. See the animated SVG monsters representing each error
+5. Fix an error to watch the defeat animation
+6. Try adding more errors to see monsters grow in size
+
+Monster Types You'll See:
+- TypeError Beast (purple): Type mismatches
+- ReferenceError Wraith (blue ghost): Undefined variables
+- Warning Bug (yellow): ESLint/compiler warnings
+
+Tips:
+- Hover over monsters in the panel to see error details
+- Click a monster card to jump to the error location
+- Use "Clear All Monsters" button to reset
 */

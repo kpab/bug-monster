@@ -1,33 +1,60 @@
 # Change Log
 
-All notable changes to the "Bug Monsters" extension will be documented in this file.
+All notable changes to the Bug Monsters extension will be documented in this file.
+
+## [0.2.0] - 2024-11-16
+
+### Added
+- **Animated SVG Monsters**: Custom-designed SVG monsters for each error type
+  - Error Monster: Red aggressive creature
+  - TypeError Beast: Purple horned beast
+  - ReferenceError Wraith: Blue ghostly wraith
+  - Warning Bug: Yellow buzzing insect
+  - Hint Spirit: Green glowing fairy
+- **Enhanced Animations**: Sophisticated CSS animations
+  - Breathing idle animation
+  - Angry shake for error monsters
+  - Spawn explosion effect
+  - Improved defeat animation with blur and rotation
+  - Power-up animation when monsters grow
+- **Improved UI**: Better monster panel design
+  - SVG monsters instead of emojis
+  - Size-based scaling
+  - Hover effects with elevation
+  - Click to navigate to error location
+
+### Changed
+- **English-Only Interface**: All UI text converted to English
+- **Better Status Bar**: Updated icons and tooltips
+- **Enhanced Styling**: Improved visual design with drop shadows and glows
+
+### Technical
+- Refactored monster rendering to use SVG images
+- Added webview URI handling for SVG assets
+- Improved CSS with advanced animations
+- Enhanced defeat animation timing and effects
 
 ## [0.1.0] - 2024-11-16
 
-### Added
-- 初回リリース
-- Diagnostics 監視機能
-- モンスター可視化（エラー、警告、ヒント）
-- モンスター種類の自動判別（TypeError, ReferenceError など）
-- サイズ変動システム（S/M/L/XL）
-- モンスターパネル UI（Webview）
-- ステータスバー表示
-- 討伐アニメーション
-- 設定項目（有効/無効、最大表示数、アニメーション速度、テーマ）
-- コマンド（toggle, openPanel, clearAll）
-- CSS アニメーション
-
-### Features
-- リアルタイムでエラー・警告を監視
-- モンスターのサイズがエラー数に応じて変化
-- エラー修正時に討伐アニメーション再生
-- パフォーマンス最適化（更新スロットリング）
+### Initial Release
+- Real-time diagnostics monitoring
+- Monster spawning system
+- Monster classification (Error, TypeError, ReferenceError, Warning, Hint)
+- Size-based scaling (S/M/L/XL)
+- Webview panel UI
+- Status bar integration
+- Basic defeat animations
+- Configuration settings
+- Commands: toggle, openPanel, clearAll
+- Basic CSS animations
 
 ## [Unreleased]
 
-### Planned
-- カスタム SVG モンスター画像
-- 討伐履歴の永続化
-- 日次レポート機能
-- サウンドエフェクト
-- より多くのテーマ対応
+### Planned Features
+- Sound effects for spawn/defeat
+- Persistent defeat history
+- Daily/weekly reports
+- Achievement system
+- More monster themes (cyber, cute)
+- Custom monster designs
+- Multi-language support (optional)

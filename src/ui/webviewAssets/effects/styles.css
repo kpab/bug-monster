@@ -1,9 +1,13 @@
-/* Bug Monsters CSS Animations and Styles */
+/* Bug Monsters - Enhanced CSS Animations and Styles */
 
 :root {
     --animation-speed-slow: 3s;
     --animation-speed-normal: 1.5s;
     --animation-speed-fast: 0.8s;
+    --monster-shadow: drop-shadow(0 4px 12px rgba(0,0,0,0.3));
+    --monster-glow-error: drop-shadow(0 0 15px rgba(255,51,51,0.6));
+    --monster-glow-warning: drop-shadow(0 0 15px rgba(255,193,7,0.6));
+    --monster-glow-hint: drop-shadow(0 0 15px rgba(76,175,80,0.6));
 }
 
 /* Monster appearance animation */
@@ -44,19 +48,27 @@
     }
 }
 
-/* Monster defeat animation */
+/* Monster defeat animation - enhanced */
 @keyframes defeatFade {
     0% {
         opacity: 1;
         transform: scale(1) rotate(0deg);
+        filter: brightness(1) blur(0px);
     }
-    50% {
-        opacity: 0.5;
-        transform: scale(1.2) rotate(180deg);
+    30% {
+        opacity: 0.8;
+        transform: scale(1.3) rotate(90deg);
+        filter: brightness(1.5) blur(0px);
+    }
+    60% {
+        opacity: 0.4;
+        transform: scale(0.8) rotate(270deg);
+        filter: brightness(0.5) blur(3px);
     }
     100% {
         opacity: 0;
-        transform: scale(0.3) rotate(360deg);
+        transform: scale(0.1) rotate(540deg);
+        filter: brightness(0) blur(8px);
     }
 }
 
@@ -183,4 +195,144 @@
 
 .celebrating {
     animation: celebrate 0.5s ease-in-out 3;
+}
+
+/* Monster idle breathing */
+@keyframes breathe {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+}
+
+/* Monster angry shake - more intense */
+@keyframes angryShake {
+    0%, 100% {
+        transform: translateX(0) translateY(0);
+    }
+    10% {
+        transform: translateX(-8px) translateY(2px);
+    }
+    20% {
+        transform: translateX(8px) translateY(-2px);
+    }
+    30% {
+        transform: translateX(-8px) translateY(2px);
+    }
+    40% {
+        transform: translateX(8px) translateY(-2px);
+    }
+    50% {
+        transform: translateX(-6px) translateY(1px);
+    }
+    60% {
+        transform: translateX(6px) translateY(-1px);
+    }
+    70% {
+        transform: translateX(-4px) translateY(1px);
+    }
+    80% {
+        transform: translateX(4px) translateY(-1px);
+    }
+    90% {
+        transform: translateX(-2px) translateY(0);
+    }
+}
+
+/* Spawn explosion effect */
+@keyframes spawnExplosion {
+    0% {
+        opacity: 0;
+        transform: scale(0) rotate(-180deg);
+        filter: brightness(2) blur(10px);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1.3) rotate(20deg);
+        filter: brightness(1.5) blur(2px);
+    }
+    75% {
+        transform: scale(0.9) rotate(-10deg);
+        filter: brightness(1.2) blur(1px);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1) rotate(0deg);
+        filter: brightness(1) blur(0px);
+    }
+}
+
+/* Glitch effect for error monsters */
+@keyframes glitch {
+    0%, 100% {
+        transform: translate(0);
+        filter: hue-rotate(0deg);
+    }
+    20% {
+        transform: translate(-2px, 2px);
+        filter: hue-rotate(20deg);
+    }
+    40% {
+        transform: translate(2px, -2px);
+        filter: hue-rotate(-20deg);
+    }
+    60% {
+        transform: translate(-2px, -2px);
+        filter: hue-rotate(10deg);
+    }
+    80% {
+        transform: translate(2px, 2px);
+        filter: hue-rotate(-10deg);
+    }
+}
+
+/* Power up animation when growing */
+@keyframes powerUp {
+    0% {
+        transform: scale(1);
+        filter: brightness(1) var(--monster-shadow);
+    }
+    25% {
+        transform: scale(0.9);
+        filter: brightness(1.5) var(--monster-glow-error);
+    }
+    50% {
+        transform: scale(1.2);
+        filter: brightness(2) var(--monster-glow-error);
+    }
+    75% {
+        transform: scale(1.1);
+        filter: brightness(1.5) var(--monster-glow-error);
+    }
+    100% {
+        transform: scale(1);
+        filter: brightness(1) var(--monster-shadow);
+    }
+}
+
+/* Enhanced monster type specific animations */
+.monster-type-error {
+    animation: breathe 2s ease-in-out infinite, angryShake 0.3s ease-in-out infinite;
+}
+
+.monster-type-warning {
+    animation: breathe 1.5s ease-in-out infinite;
+}
+
+.monster-type-hint {
+    animation: glow 2s ease-in-out infinite;
+}
+
+.monster-size-XL {
+    animation: breathe 2.5s ease-in-out infinite, angryShake 0.4s ease-in-out infinite !important;
+}
+
+.monster-spawning {
+    animation: spawnExplosion 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
+}
+
+.monster-growing {
+    animation: powerUp 1s ease-out forwards;
 }

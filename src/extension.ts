@@ -48,7 +48,7 @@ export function activate(context: vscode.ExtensionContext) {
     context.subscriptions.push(
         vscode.commands.registerCommand('bugMonsters.clearAll', () => {
             monsterManager.clearAll();
-            vscode.window.showInformationMessage('All monsters have been defeated! 🎉');
+            vscode.window.showInformationMessage('⚔️ All monsters have been defeated!');
         })
     );
 
@@ -74,10 +74,10 @@ export function activate(context: vscode.ExtensionContext) {
     const hasShownWelcome = context.globalState.get('bugMonsters.hasShownWelcome', false);
     if (!hasShownWelcome) {
         vscode.window.showInformationMessage(
-            '👹 Bug Monsters is ready! Errors and warnings will appear as monsters. Click the status bar to see them!',
-            'Open Panel'
+            '⚔️ Bug Monsters is ready! Your errors will appear as monsters. Click the status bar to view them!',
+            'Open Monster Panel'
         ).then(selection => {
-            if (selection === 'Open Panel') {
+            if (selection === 'Open Monster Panel') {
                 vscode.commands.executeCommand('bugMonsters.openPanel');
             }
         });
@@ -93,7 +93,7 @@ function toggleExtension(context: vscode.ExtensionContext) {
     config.update('enable', !currentState, vscode.ConfigurationTarget.Global);
 
     if (!currentState) {
-        vscode.window.showInformationMessage('Bug Monsters enabled! 👹');
+        vscode.window.showInformationMessage('⚔️ Bug Monsters enabled!');
     } else {
         vscode.window.showInformationMessage('Bug Monsters disabled');
         monsterManager.clearAll();
@@ -105,14 +105,14 @@ function updateStatusBar() {
     const totalMonsters = stats.errors + stats.warnings + stats.hints;
 
     if (totalMonsters > 0) {
-        const errorIcon = stats.errors > 0 ? '🔴' : '';
-        const warningIcon = stats.warnings > 0 ? '🟡' : '';
-        statusBarItem.text = `👹 ${errorIcon}${stats.errors} ${warningIcon}${stats.warnings}`;
-        statusBarItem.tooltip = `Bug Monsters: ${stats.errors} errors, ${stats.warnings} warnings\nClick to view monsters`;
+        const errorIcon = stats.errors > 0 ? '⚠️' : '';
+        const warningIcon = stats.warnings > 0 ? '🔔' : '';
+        statusBarItem.text = `⚔️ ${errorIcon}${stats.errors} ${warningIcon}${stats.warnings}`;
+        statusBarItem.tooltip = `Bug Monsters: ${stats.errors} error${stats.errors !== 1 ? 's' : ''}, ${stats.warnings} warning${stats.warnings !== 1 ? 's' : ''}\nClick to view monster panel`;
         statusBarItem.show();
     } else {
-        statusBarItem.text = '✅ No Bugs';
-        statusBarItem.tooltip = 'Bug Monsters: All clear!';
+        statusBarItem.text = '⚔️ All Clear';
+        statusBarItem.tooltip = 'Bug Monsters: No bugs detected!';
         statusBarItem.show();
     }
 }

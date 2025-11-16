@@ -1,148 +1,180 @@
-# 👹 Bug Monsters - バグの可視化モンスター拡張
+# ⚔️ Bug Monsters
 
-VS Code の Diagnostics（エラー・警告）情報をもとに、**バグをモンスターとして可視化**するエンタメ系拡張機能です。
+> Transform your debugging experience! Watch as your bugs and errors manifest as animated monsters that you must defeat by fixing your code.
 
-## ✨ 特徴
+Bug Monsters is a VS Code extension that gamifies the debugging process by visualizing diagnostics (errors, warnings, and hints) as animated monster creatures. Fix your bugs to defeat the monsters!
 
-- 🐛 **エラーをモンスター化**: エラーが発生すると画面にモンスターが出現
-- ⚔️ **討伐アニメーション**: バグを修正するとモンスターが倒れるアニメーションが再生
-- 📊 **リアルタイム監視**: VS Code の Diagnostics をリアルタイムで監視
-- 🎮 **ゲーム的体験**: デバッグをゲーム感覚で楽しく
-- 🎨 **カスタマイズ可能**: テーマやアニメーション速度を設定可能
+## ✨ Features
 
-## 🎯 使い方
+- **🎨 Animated SVG Monsters**: Beautiful, custom-designed monsters for each error type
+- **⚡ Real-time Monitoring**: Instantly spawns monsters when errors appear
+- **⚔️ Defeat Animations**: Satisfying animations when you fix bugs
+- **📊 Live Statistics**: Track errors, warnings, and defeated monsters
+- **🎮 Size Progression**: Monsters grow larger as errors accumulate
+- **🎯 Click to Navigate**: Click any monster to jump to the error in your code
 
-### インストール
+## 👾 Monster Types
 
-1. このリポジトリをクローン
-2. `npm install` で依存関係をインストール
-3. VS Code で F5 を押して拡張機能デバッグモードで起動
+| Monster | Trigger | Description |
+|---------|---------|-------------|
+| **Error Monster** | General errors | Aggressive red creature with fangs and claws |
+| **TypeError Beast** | Type errors | Large purple beast with horns |
+| **ReferenceError Wraith** | Reference errors | Ghostly blue semi-transparent wraith |
+| **Warning Bug** | Warnings | Small yellow buzzing bug |
+| **Hint Spirit** | Hints | Friendly green glowing spirit |
 
-### 基本操作
+## 📐 Monster Sizes
 
-1. **モンスターの出現**: コードにエラーや警告があると自動的にモンスターが出現します
-2. **パネルを開く**: ステータスバーのモンスターアイコンをクリックするか、コマンドパレット（Ctrl/Cmd+Shift+P）から「Bug Monsters: Open Monster Panel」を実行
-3. **モンスター討伐**: エラーを修正するとモンスターが倒れます
-4. **全削除**: 「Bug Monsters: Clear All Monsters」コマンドで全モンスターを強制討伐
+Monsters grow based on the number of issues:
 
-## 👾 モンスターの種類
+- **S Size**: 1-2 issues
+- **M Size**: 3-5 issues
+- **L Size**: 6-9 issues
+- **XL Size**: 10+ issues (extra angry!)
 
-| モンスター | 対応 | アイコン | 説明 |
-|---------|------|---------|------|
-| **Error Monster** | エラー | 👾 | 一般的なエラー |
-| **TypeError Beast** | TypeError | 🦖 | 型エラー専用の巨獣 |
-| **ReferenceError Wraith** | ReferenceError | 👻 | 参照エラーの亡霊 |
-| **Warning Bug** | 警告 | 🐛 | 警告の小さな虫 |
-| **Hint Spirit** | ヒント | 💡 | ヒントの光る精霊 |
+## 🚀 Getting Started
 
-## 🎨 モンスターのサイズ
+### Installation
 
-モンスターはエラーの数に応じてサイズが変化します：
+1. Clone this repository
+2. Run `npm install` to install dependencies
+3. Press `F5` in VS Code to launch the extension in debug mode
+4. A new VS Code window will open with the extension loaded
 
-- **S サイズ**: 1〜2 件
-- **M サイズ**: 3〜5 件
-- **L サイズ**: 6〜9 件
-- **XL サイズ**: 10 件以上
+### Usage
 
-## ⚙️ 設定
+1. **Monsters Spawn**: Errors and warnings automatically spawn monsters
+2. **View Panel**: Click the sword icon (⚔️) in the status bar to open the Monster Panel
+3. **Defeat Monsters**: Fix your bugs to see the defeat animation
+4. **Clear All**: Use the "Clear All Monsters" button or command to reset
 
-設定画面（Settings）または `settings.json` で以下の設定が可能です：
+## 🎮 Commands
+
+Access these via the Command Palette (`Ctrl/Cmd+Shift+P`):
+
+- `Bug Monsters: Toggle Enable/Disable` - Turn the extension on/off
+- `Bug Monsters: Open Monster Panel` - View all active monsters
+- `Bug Monsters: Clear All Monsters` - Defeat all monsters instantly
+
+## ⚙️ Configuration
+
+Customize Bug Monsters in your VS Code settings:
 
 ```json
 {
-  // 拡張機能の有効/無効
+  // Enable or disable the extension
   "bugMonsters.enable": true,
 
-  // 最大モンスター表示数
+  // Maximum number of monsters to display simultaneously
   "bugMonsters.maxMonsters": 5,
 
-  // 警告でもモンスターを表示
+  // Show monsters for warnings
   "bugMonsters.showOnWarnings": true,
 
-  // アニメーション速度（slow/normal/fast）
+  // Animation speed (slow/normal/fast)
   "bugMonsters.animationSpeed": "normal",
 
-  // モンスターテーマ（fantasy/cyber/cute）
+  // Visual theme (fantasy/cyber/cute)
   "bugMonsters.monsterTheme": "fantasy"
 }
 ```
 
-## 🎮 コマンド
+## 🧪 Testing
 
-拡張機能では以下のコマンドが利用できます：
+Want to see the extension in action?
 
-- `Bug Monsters: Toggle Enable/Disable` - 拡張機能の有効/無効を切り替え
-- `Bug Monsters: Open Monster Panel` - モンスターパネルを開く
-- `Bug Monsters: Clear All Monsters` - すべてのモンスターを強制討伐
+1. Open the included `example-test.ts` file
+2. You'll see type errors and reference errors
+3. Monsters will appear in the status bar
+4. Click the status bar to open the Monster Panel
+5. Fix errors to watch monsters get defeated!
 
-## 🏗️ アーキテクチャ
+Example error code:
+```typescript
+const numberValue: number = "this is a string"; // Spawns TypeError Beast!
+console.log(undefinedVariable); // Spawns ReferenceError Wraith!
+```
+
+## 🏗️ Architecture
 
 ```
 src/
-├── extension.ts              # 拡張機能のエントリーポイント
-├── types.ts                  # TypeScript 型定義
-├── monsterManager.ts         # モンスターの状態管理
-├── diagnosticsWatcher.ts     # Diagnostics 監視
+├── extension.ts              # Extension entry point
+├── types.ts                  # TypeScript type definitions
+├── monsterManager.ts         # Monster state management
+├── diagnosticsWatcher.ts     # VS Code diagnostics monitoring
 └── ui/
-    ├── panelView.ts          # Webview パネル
+    ├── panelView.ts          # Webview panel implementation
     └── webviewAssets/
         ├── effects/
-        │   └── styles.css    # アニメーション CSS
-        ├── monsters/         # モンスター画像（将来的に SVG 追加予定）
-        └── scripts/          # Webview 用スクリプト
+        │   └── styles.css    # Animation CSS
+        └── monsters/         # SVG monster designs
+            ├── error.svg
+            ├── typeerror.svg
+            ├── referenceerror.svg
+            ├── warning.svg
+            └── hint.svg
 ```
 
-## 🧪 テスト方法
+## 🎨 Monster Animations
 
-1. VS Code で本プロジェクトを開く
-2. F5 を押してデバッグモードで起動
-3. 新しい VS Code ウィンドウが開く
-4. テスト用のファイルを作成し、意図的にエラーを入れてみる：
+Each monster features sophisticated SVG animations:
 
-```typescript
-// test.ts
-const x: number = "string"; // TypeError が発生
-console.log(undefinedVariable); // ReferenceError が発生
+- **Idle Breathing**: Subtle breathing animation
+- **Angry Shake**: Error monsters shake aggressively
+- **Floating**: Gentle up-and-down movement
+- **Spawn Explosion**: Dramatic entrance when appearing
+- **Defeat Fade**: Spectacular exit when bugs are fixed
+- **Growing Power-Up**: Flash and grow when errors increase
+
+## 📝 Development
+
+### Requirements
+
+- VS Code 1.85.0 or higher
+- Node.js and npm
+- TypeScript 5.3+
+
+### Build
+
+```bash
+# Install dependencies
+npm install
+
+# Compile TypeScript
+npm run compile
+
+# Watch mode for development
+npm run watch
 ```
 
-5. ステータスバーにモンスターアイコンが表示されることを確認
-6. アイコンをクリックしてパネルを開く
-7. エラーを修正してモンスターが消えることを確認
+### Debug
 
-## 📝 開発状況
+1. Open the project in VS Code
+2. Press `F5` to launch Extension Development Host
+3. Test your changes in the new window
 
-### ✅ 実装済み
+## 🤝 Contributing
 
-- [x] 基本的な拡張機能構造
-- [x] Diagnostics 監視機能
-- [x] モンスター状態管理
-- [x] Webview パネル UI
-- [x] ステータスバー表示
-- [x] 設定項目
-- [x] コマンド実装
-- [x] CSS アニメーション
+Contributions are welcome! Here are some ideas:
 
-### 🚧 今後の予定
+- [ ] Add more monster designs
+- [ ] Implement sound effects
+- [ ] Create daily/weekly defeat reports
+- [ ] Add achievement system
+- [ ] Support for more diagnostic types
+- [ ] Custom monster themes
 
-- [ ] カスタム SVG モンスター画像
-- [ ] より詳細なアニメーション
-- [ ] 討伐履歴の永続化
-- [ ] 日次レポート機能
-- [ ] サウンドエフェクト
-- [ ] マルチテーマ対応の強化
+## 📜 License
 
-## 🤝 貢献
+MIT License - See LICENSE file for details
 
-プルリクエストを歓迎します！バグ報告や機能リクエストは Issue でお願いします。
+## 🎉 Credits
 
-## 📄 ライセンス
-
-MIT License
-
-## 🎉 クレジット
-
-このプロジェクトは、開発者のデバッグ体験をより楽しくすることを目指して作成されました。
+Created to make debugging more engaging and fun. Because fixing bugs should feel like an epic battle!
 
 ---
 
-**Happy Bug Hunting! 👹⚔️**
+**Happy Monster Hunting!** ⚔️👾
+
+*Made with ❤️ for developers who want to turn debugging into an adventure*
